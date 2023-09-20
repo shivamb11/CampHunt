@@ -1,0 +1,19 @@
+.animated {
+    -webkit-animation-duration: 5s;animation-duration: 5s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+
+.fade-out {
+    -webkit-animation-name: fade-out;
+    animation-name: fade-out;
+}
+
+@-webkit-keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0; display: none;}
+}
+
+@keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0; display: none;}
+}

@@ -1,0 +1,7 @@
+.nav-link:hover {   
+    box-shadow: 0 2px 0 #fff;
+}
+
+#navbarToggler {
+    margin: 0 20px;
+}

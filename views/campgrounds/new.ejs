@@ -1,0 +1,51 @@
+<%- layout('layouts/boilerplate') %>
+
+    <div class="w-50 mx-auto my-3">
+
+        <h1 class="my-3">Add a campground</h1>
+
+        <form action="/campgrounds" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="campground[title]" id="title" aria-describedby="title" autofocus required>
+                <div class="invalid-feedback">
+                    Please provide a title.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" name="campground[location]" id="location" aria-describedby="location" required>
+                <div class="invalid-feedback">
+                    Please provide a location.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" name="campground[description]" id="description" rows="3" required></textarea>
+                <div class="invalid-feedback">
+                    Please provide a description.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text">₹</span>
+                    <input type="number" class="form-control" name="campground[price]" id="price" aria-describedby="price" required>
+                    <div class="invalid-feedback">
+                        Please provide a price.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="images" class="form-label">Images</label>
+                <div class="input-group">
+                    <input type="file" class="form-control" name="images" id="images" required multiple>                    
+                    <div class="invalid-feedback">
+                        Please provide an image.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success w-100 my-2 py-2">Add</button>
+        </form>
+
+    </div>

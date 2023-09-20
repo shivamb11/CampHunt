@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampHunt</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/stylesheets/fonts.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+
+<body class="d-flex flex-column text-white">
+        <nav class="nav px-5 py-3 mx-5">
+            <div>
+                <h3 class="brand">CampHunt</h3>
+            </div>
+            <div class="d-flex ms-auto navbar-navigation">
+                <a class="nav-link text-white text-opacity-75" href="/">Home</a>
+                <a class="nav-link text-white text-opacity-75" href="/campgrounds">Campgrounds</a>
+                <% if (!currentUser) { %>
+                    <a class="nav-link text-white text-opacity-75" href="/login">Login</a>
+                    <a class="nav-link text-white text-opacity-75" href="/register">Register</a>
+                <% } else { %>
+                    <a class="nav-link text-white text-opacity-75" href="/logout">Logout</a>
+                <% } %>
+            </div>        
+        </nav>
+    
+        <main class="px-3 text-center">
+            <h1>Welcome to CampHunt!</h1>
+            <p class="leadtext">Life's better when you add fresh air and a warm campfire.<br>Jump right in and view all our campgrounds. <br>Feel free to share some of your own and comment on others.</p>
+            <a href="/campgrounds" class="btn btn-light btn-lg">View Campgrounds</a>
+        </main>
+    
+        <footer class="mt-auto text-white text-opacity-50 text-center">
+            <p>&copy; 2023 CampHunt</p>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<%- layout('layouts/boilerplate') %>
+
+    <link rel="stylesheet" href="/stylesheets/campgroundIndex.css">
+
+    <div id="clusterMap"></div>
+
+    <h1 class="my-3">Campgrounds</h1>
+
+    <div class="row row-cols-lg-2 row-cols-md-1 row-cols-sm-1 row-cols-1">
+      <% for(let campground of campgrounds) { %>
+        <div class="col">
+          <div class="card mb-4">
+            <div class="row g-0">
+              <div class="col-md-6 ">
+                <img src="https://images.unsplash.com/photo-1523978591478-c753949ff840?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bGFuZHNjYXBlfHx8fHx8MTY5MzY0MDc5OA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h4 class="card-title"><%= campground.title %></h4>
+                  <p class="card-text"><%= campground.description.substring(0,151) %></p>
+                  <h5 class="card-text">₹<%= campground.price %></h5>
+                  <a class="btn btn-primary mt-3" href="/campgrounds/<%= campground.id %>">View Campground</a>
+                  <p class="card-text mt-2"><small class="text-body-secondary">Submitted on <%= campground.date %></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+    </div>
+
+    <script>
+      const mapboxToken = '<%- process.env.MAPBOX_TOKEN %>';
+      const campgrounds = {features : JSON.parse('<%- JSON.stringify(campgrounds) %>')};
+    </script>
+    <script src="/scripts/campgroundIndex.js"></script>
