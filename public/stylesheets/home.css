@@ -24,7 +24,12 @@ main {
 }
 
 @media (max-width: 676px) {
+    nav {
+        justify-content: center;
+    }
     .navbar-navigation {
-        margin: 0 auto;
+        flex-wrap: wrap;
+        margin-left: 0 !important;
+        justify-content: center;
     }
 }
