@@ -45,4 +45,8 @@
     .container-width {
         margin: 0 auto;
     }
+    .campground-description {
+        min-width: 300px;
+        font-size: 19px;
+    }
 }
