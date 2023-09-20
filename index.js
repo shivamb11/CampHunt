@@ -45,19 +45,19 @@ const store = MongoStore.create({
     mongoUrl : dbUrl,
     touchAfter : 24*60*60,
     crypto : {
-        secret : 'thisisapasscode'
+        secret : process.env.SESSION_SECRET
     }
 });
 
 const sessionConfig = {
     store,
     name : 'session',
-    secret : 'thisisapasscode',
+    secret : process.env.SESSION_SECRET,
     resave : false,
     saveUninitialized : true,
     cookie : {
         httpOnly : true,        
-        // secure : true,
+        secure : true,
         expires : Date.now() + 1000*60*60*24*7,
         maxAge : 1000*60*60*24*7
     }
