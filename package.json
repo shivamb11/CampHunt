@@ -24,11 +24,10 @@
     "sanitize-html": "^2.11.0"
   },
   "type": "module",
-  "name": "pract",
+  "name": "Camphunt",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
     "start_windows": "set NODE_ENV=production&&nodemon index.js"
   },
   "keywords": [],
